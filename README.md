@@ -1,6 +1,6 @@
 # Splunk-SIEM-SOC-lab
 
-Deploying **Splunk SIEM** on Linux, forward logs from an endpoint with **Splunk Universal Forwarder**, and expose **FTP** and **HTTP (Apache)** honeypot services to the internet to attract attackers. When an attacker scans or tries to gain access via SSH, FTP, or HTTP, the activity is collected, indexed, and detected in Splunk using SPL queries.
+Deploying **Splunk SIEM** on Linux, forward logs from an endpoint with **Splunk Universal Forwarder**, and expose **FTP** and **HTTP (Apache)** honeypot services to the internet to attract attackers. When an attacker scans or tries to gain access via FTP, or HTTP, the activity is collected, indexed, and detected in Splunk using SPL queries.
 
 **Tech stack:** Splunk Enterprise · Splunk Universal Forwarder · Debian 13 · Ubuntu 24.04 · vsftpd · Apache · SPL
 
@@ -17,7 +17,7 @@ Two servers are required:
 
 ```
  Internet ──► Server 2 (Ubuntu 24.04)                Server 1 (Debian 13)
-              SSH / FTP / Apache honeypots   ──────►  Splunk Enterprise
+              FTP / Apache honeypots   ──────►  Splunk Enterprise
               Splunk Universal Forwarder      :9996   Web UI :8000
 ```
 
