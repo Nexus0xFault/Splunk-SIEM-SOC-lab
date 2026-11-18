@@ -292,9 +292,9 @@ The Apache honeypot, which advertises the vulnerable version 2.4.50, attracted s
 
 | Source IP | Request | Response | Interpretation |
 |---|---|---|---|
-| `204.76.203.18` | `GET /HBTs/top1miku.sh4`, `GET /HBTs/top1miku.m68k` | `404` | Botnet-style scanner looking for malware payloads. The file names end with CPU architectures (SH4, m68k), typical of IoT malware droppers. |
-| `85.217.149.73` | Raw bytes `\x16\x03\x01` | `400` | A TLS handshake sent to a plain HTTP port. The scanner was probing for services without knowing what is running. |
-| `45.138.12.19` | `GET /` with User-Agent `osint-scanner/1.0; +research` | `302` | Internet-wide research scanner that openly identifies itself. |
+| `204.76.*.*` | `GET /HBTs/top1miku.sh4`, `GET /HBTs/top1miku.m68k` | `404` | Botnet-style scanner looking for malware payloads. The file names end with CPU architectures (SH4, m68k), typical of IoT malware droppers. |
+| `85.217.*.*` | Raw bytes `\x16\x03\x01` | `400` | A TLS handshake sent to a plain HTTP port. The scanner was probing for services without knowing what is running. |
+| `45.138.*.*` | `GET /` with User-Agent `osint-scanner/1.0; +research` | `302` | Internet-wide research scanner that openly identifies itself. |
 
 All of these requests failed (`404` / `400`) or were harmless redirects, because the honeypot hosts no real content.
 
